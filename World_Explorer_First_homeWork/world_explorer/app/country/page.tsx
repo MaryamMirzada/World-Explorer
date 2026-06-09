@@ -8,25 +8,25 @@ import { fetchCountries } from "../lib/api";
 import SearchCountry from "../components/country/SearchCountry"
 import Link from "next/link"
 export default function Page() {
-       const [search, setSearch] = useState("")
-        const [countries, setCountries] = useState<any[]>([])
-        const [loading, setLoading] = useState(true)
-    
-        useEffect(() => {
-            const loadCountries = async () => {
-                try {
-                    const data = await fetchCountries()
-                    setCountries(data)
-                } catch (error) {
-                    console.log(error)
-                } finally {
-                    setLoading(false)
-                }
+    const [search, setSearch] = useState("")
+    const [countries, setCountries] = useState<any[]>([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const loadCountries = async () => {
+            try {
+                const data = await fetchCountries()
+                setCountries(data)
+            } catch (error) {
+                console.log(error)
+            } finally {
+                setLoading(false)
             }
-    
-            loadCountries()
-        }, [])
-    
+        }
+
+        loadCountries()
+    }, [])
+
 
     const filteredCountries = countries.filter((country) => {
         const name = country?.name?.common
@@ -55,8 +55,7 @@ export default function Page() {
                     {filteredCountries.map((country, index) => (
                         <Link
                             key={index}
-                            href={`/country/${country.cca3}`}
-                        >
+                            href={`/country/${country.cca3 || country.name.common}`}>
                             <div className="border rounded-xl bg-white shadow-sm hover:shadow-md transition p-4 flex flex-col items-center text-center">
 
                                 {/* Country Name - TOP */}
@@ -97,6 +96,6 @@ export default function Page() {
 
             </div>
         </div>
-   
+
     )
 }

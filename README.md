@@ -160,4 +160,4 @@ Links:
 
 ## 🏠 Home Page
 
-<img src="/screenshots/home.png" width="100%" />
+<img src="public/screenshots/home.png" width="100%" />

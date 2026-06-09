@@ -154,14 +154,10 @@ Links:
 - Visible on all pages
 - Simple copyright text
 
-  ### Screenshot
-
-  ![Home Page](/screenshots/home.png)
-
 ---
 
-### CountryCard
+### Screenshot
 
-Props:
-```jsx
-<CountryCard country={country} />
+## 🏠 Home Page
+
+<img src="/screenshots/home.png" width="100%" />

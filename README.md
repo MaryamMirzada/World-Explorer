@@ -154,6 +154,10 @@ Links:
 - Visible on all pages
 - Simple copyright text
 
+  ### Screenshot
+
+  ![Home Page](/screenshots/home.png)
+
 ---
 
 ### CountryCard
